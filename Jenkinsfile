@@ -5,4 +5,10 @@ node("linux"){
     stage("check files"){
         sh "ls -la"
     }
+    stage("tf init"){
+        sh "terraform init"
+    }
+    stage("tf plan"){
+        sh "terraform plan"
+    }
 }

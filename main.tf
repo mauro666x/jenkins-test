@@ -13,6 +13,14 @@ provider "aws" {
 }
 
 
+terraform {
+  backend "s3" {
+    bucket = "my-tf-test-bucket-new-value-test"
+    key    = "jenkins-test/terraform/tfstate"
+    region = "us-east-1"
+  }
+}
+
 
 resource "aws_s3_bucket" "bucket_s3" {
   bucket = "mfbenavidesc-s3-from-jenkins"

@@ -9,6 +9,9 @@ node("linux"){
         sh "terraform init"
     }
     stage("tf plan"){
-        sh "terraform plan"
+        sh "terraform plan -out=tfplan"
+    }
+    stage("tf apply"){
+        sh "terraform apply tfplan"
     }
 }
